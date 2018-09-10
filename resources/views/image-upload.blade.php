@@ -13,7 +13,7 @@
           <div class="row">
             <div class="col-lg-5 mb-30 animated fadeIn">
               <div class="upload-img__box">
-              {{ Form::open(['url' => '/analyse-images', 'id' => 'imageUpload','name'=>'image-upload-form', 'role' => 'form', 'class' => 'form-horizontal']) }}
+              {{ Form::open(['url' => '/save-analyse-images', 'id' => 'imageUpload','name'=>'image-upload-form', 'role' => 'form', 'class' => 'form-horizontal']) }}
                  <div class="btn--file qoute-dtls__upload" id="image_upload" class="fallback dropzone" >
                     <div class="qoute-dtls__icon file-name fs-30">
                       <img class="icon mb-30" src="img/svg/icon-image.svg" alt="image thumb" width="62" height="50">
@@ -36,6 +36,23 @@
             </div>
 
             <div class="col-lg-3">
+                <ul class="list-unstyled img-list" id="image-previews">
+                    <li class="media">
+                    <div class="img mr-3">
+                        <img src="img/svg/icon-image-color.svg" alt="Uploaded image" width="40" height="40">
+                    </div>
+                    <div class="media-body">
+                        <h5 class="mt-0">File name.jpg</h5>
+                        <div class="progress">
+                        <div class="progress-bar bg-secondary" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-light icon-close ml-3" data-toggle="tooltip" data-placement="right" title="Remove">
+                        <ion-icon name="close"></ion-icon>
+                    </button>
+                    </li>
+
+                </ul>
             </div>
             <div class="col-11 w-100"></div>
             

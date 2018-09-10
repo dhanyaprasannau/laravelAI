@@ -29,3 +29,9 @@ Route::get('show-image','HomeController@showImage');
 Route::post('s3-image-upload','ImageUploadController@imageUpload');
 
 Route::post('uploadImage','ImageUploadController@uploadImages') ;
+
+Route::post('api-test','AnalyseController@testApi') ;
+
+Route::post('save-analyse-images','AnalyseController@saveImageAnalysis') ;
+
+Route::get('analyse-images','AnalyseController@analyseImages') ;

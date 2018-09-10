@@ -2,7 +2,7 @@
     right:200px;
 }
 
-#bg-after-upload{
+#bg-after-upload, #image-previews{
     display: none;
 }
 

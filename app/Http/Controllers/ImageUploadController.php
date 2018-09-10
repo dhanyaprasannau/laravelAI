@@ -72,9 +72,12 @@ class ImageUploadController extends Controller
     }
 
     public function removeUploadedImages(Request $request){
-        // if(Storage::disk('s3')->exists($path)) {
-        //     Storage::disk('s3')->delete($path)
-        // }
+        $path = ''; //image name in bucket to be done
+        $imageId = 0;
+        if(Storage::disk('s3')->exists($path)) {
+            Storage::disk('s3')->delete($path);
+            DB::table('ai_image_details')->where('id', '=', $imageId)->delete();
+        }
     }
    
 }
