@@ -1,3 +1,16 @@
 .dz-preview.dz-image-preview{
     right:200px;
 }
+
+#bg-after-upload{
+    display: none;
+}
+
+.hidden{
+    display:none;
+}
+
+.upload-img__box{
+    max-height: 320px;
+    overflow: hidden;
+}

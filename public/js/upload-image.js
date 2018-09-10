@@ -13,8 +13,8 @@ $('div#image_upload').dropzone ({
     init: function() {
         this.on("sending", function(file, xhr, formData){
             formData.append("_token", $("meta[name='csrf-token']").attr("content"));
-             formData.append("claim_id", $('#claim_id').val());
-             formData.append("image_id", i);
+            formData.append("claim_id", $('#claim_id').val());
+            formData.append("image_id", i);
 
         }),
             this.on("uploadprogress", function(file, progress) {
@@ -27,8 +27,17 @@ $('div#image_upload').dropzone ({
                 if(response_text.error == 1){
                     alert(response_text.errormsg);
                 }
-                i++;
                 $( "#fileUploadButton" ).remove();
+
+                if(i == 1){
+                    $('#bg-before-upload').hide();
+                    $('#bg-after-upload').fadeIn();
+                    $('#analyseButton').removeClass('upload-img__btn-box');
+                    $('#analyseButton').addClass('text-md-right');
+                }
+
+
+                i++;
                 // $("#image_upload").append('<div id="fileUploadButton" class="dz-preview dz-processing dz-image-preview dz-success dz-complete add_image_preview"><div class="dz-image text-center"><i class="fa fa-plus fa-5x add_more_images"></i><p>Add More Files</p></div></div>');
 
             }),
@@ -59,4 +68,22 @@ $('div#image_upload').dropzone ({
 
 $(document).on('click','#fileUploadButton', function(){
     $('div#hr_document_upload').trigger('click');
+});
+
+$(document).on('click','#analyseButton', function(){
+    $.ajax({
+            type: "POST",
+            url: "/api-test",
+            data: { 
+                file: 'jkk',
+                _token: $("meta[name='csrf-token']").attr("content") 
+            },
+            success: function(result) {
+                alert('ok');
+                $('#imageUpload').submit();
+            },
+            error: function(result) {
+                alert('error');
+            }
+        });
 });

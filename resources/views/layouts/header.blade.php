@@ -58,16 +58,12 @@
     ================================================== -->
   <title>IFFCO TOKIO</title>
 
+  <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/main.min.css" />
   <link href="http://demo.expertphp.in/css/dropzone.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="js/dropzone.js"></script>
 
-  <style>
-    .hidden{
-      display:none;
-    }
-    </style>
 </head>
 
 <body class="fadeIn animated">
